@@ -29,6 +29,9 @@ Vagrant.configure("2") do |config|
         machine.vm.provision "shell", path: "worker.sh"
       end
 
+      if "#{name}" == "master"
+        machine.vm.provision "shell", path: "service.sh"
+      end
     end
   end
 end
